@@ -1,0 +1,36 @@
+﻿@model CalculatorSess0809.Models.Calculator
+
+@{
+    ViewData["Title"] = "Calculator";
+}
+
+<h1>Calculator</h1>
+
+<form asp-action="Calculate" asp-controller="Calculator" method="post">
+    <div class="form-group">
+        <label asp-for="Number1">First Num:</label>
+        <input asp-for="Number1" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Number2">Second Num:</label>
+        <input asp-for="Number2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Equation">The Equation:</label>
+        <input asp-for="Equation" class="form-control" />
+    </div>
+    <button type="submit" name="action" value="Sum" class="btn btn-primary">חשב סכום</button>
+    <button type="submit" name="action" value="Difference" class="btn btn-secondary">חשב הפרש</button>
+    <button type="submit" name="action" value="Multiply" class="btn btn-secondary">חשב כפל</button>
+    <button type="submit" name="action" value="Divide" class="btn btn-secondary">חשב חילוק</button>
+    <button type="submit" name="action" value="Power" class="btn btn-secondary">חשב חזקה</button>
+    <button type="submit" name="action" value="Root" class="btn btn-secondary">חשב חזקה</button>
+    <button type="submit" name="action" value="CalculateEquation" class="btn btn-secondary">חשב משוואה</button>
+</form>
+
+<hr />
+
+@if (Model != null)
+{
+    <h3>The Result Is: @Model.Result</h3>
+}
